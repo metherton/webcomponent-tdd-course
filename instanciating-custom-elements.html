@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>web components</title>
+</head>
+<body>
+
+  <pluralsight-comment></pluralsight-comment>
+
+  <script>
+    var PluralsightCommentProto = Object.create(HTMLElement.prototype);
+    PluralsightCommentProto.createdCallback = function() {
+      this.innerHTML = "<h2>Pluralsight comment</h2><textarea></textarea><br /><input type='submit'>";
+    }
+    var PluralsightComment = document.registerElement('pluralsight-comment', {
+      prototype: PluralsightCommentProto
+    })
+  </script>
+
+  <template id="header">
+    <div>Header</div>
+    <template id="body">
+      <div>Body</div>
+    </template>
+  </template>
+
+
+</body>
+</html>
