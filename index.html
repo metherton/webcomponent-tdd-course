@@ -3,17 +3,19 @@
 <head>
   <meta charset="utf-8">
   <title>web components</title>
+  <script>
+    class MyCustomElement extends HTMLElement {
+      constructor() {
+        super();
+        console.log('my custom element constructed');
+      }
+    }
+    window.customElements.define('my-custom-element', MyCustomElement);
+  </script>
 </head>
 <body>
 
-  <template>
-    <p>I'm coming from a template</p>
-  </template>
+  <my-custom-element></my-custom-element>
 
-  <script>
-    var template = document.querySelector('template');
-    var clone = document.importNode(template.content, true);
-    document.body.appendChild(clone);
-  </script>
 </body>
 </html>
