@@ -6,16 +6,18 @@
 </head>
 <body>
 
-  <pluralsight-comment></pluralsight-comment>
+  <!--<pluralsight-comment></pluralsight-comment>-->
 
   <script>
     var PluralsightCommentProto = Object.create(HTMLElement.prototype);
     PluralsightCommentProto.createdCallback = function() {
       this.innerHTML = "<h2>Pluralsight comment</h2><textarea></textarea><br /><input type='submit'>";
-    }
+    };
     var PluralsightComment = document.registerElement('pluralsight-comment', {
       prototype: PluralsightCommentProto
-    })
+    });
+    var comment = new PluralsightComment();
+    document.body.appendChild(comment);
   </script>
 
   <template id="header">
