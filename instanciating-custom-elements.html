@@ -16,8 +16,14 @@
     var PluralsightComment = document.registerElement('pluralsight-comment', {
       prototype: PluralsightCommentProto
     });
+    // option 2
     var comment = new PluralsightComment();
+//    document.body.appendChild(comment);
+
+    // option 3
+    var comment = document.createElement('pluralsight-comment');
     document.body.appendChild(comment);
+
   </script>
 
   <template id="header">
