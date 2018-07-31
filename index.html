@@ -1,9 +1,19 @@
 <!DOCTYPE html>
 <html>
 <head>
-
+  <meta charset="utf-8">
+  <title>web components</title>
 </head>
 <body>
 
+  <template>
+    <p>I'm coming from a template</p>
+  </template>
+
+  <script>
+    var template = document.querySelector('template');
+    var clone = document.importNode(template.content, true);
+    document.body.appendChild(clone);
+  </script>
 </body>
 </html>
