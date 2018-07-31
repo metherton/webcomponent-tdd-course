@@ -1,0 +1,24 @@
+{
+  "name": "webcomponenttdd",
+  "description": "",
+  "main": "index.js",
+  "authors": [
+    "Martin"
+  ],
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "devDependencies": {
+    "web-component-tester": "^6.5.0",
+    "webcomponentsjs": "^2.0.3"
+  },
+  "resolutions": {
+    "webcomponentsjs": "^2.0.3"
+  }
+}

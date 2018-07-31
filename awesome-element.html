@@ -1,0 +1,21 @@
+<template>
+  <style>
+    p {
+      color: red;
+    }
+  </style>
+  <p>my awesome element</p>
+</template>
+
+<script>
+  const $owner = (document._currentScript || document.currentScript).ownerDocument;
+  const $template = $owner.querySelector('template');
+  class AwesomeElement extends HTMLElement {
+    connectedCallback() {
+      this.awesomest = true;
+      const $content = document.importNode($template.content, true);
+      this.appendChild($content);
+    }
+  }
+  window.customElements.define('awesome-element', AwesomeElement);
+</script>
