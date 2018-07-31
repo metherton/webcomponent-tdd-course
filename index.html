@@ -1,21 +1,11 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <meta charset="utf-8">
-  <title>web components</title>
-  <script>
-    class MyCustomElement extends HTMLElement {
-      constructor() {
-        super();
-        console.log('my custom element constructed');
-      }
-    }
-    window.customElements.define('my-custom-element', MyCustomElement);
-  </script>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <link rel="import" href="my-custom-element.html" />
 </head>
 <body>
-
-  <my-custom-element></my-custom-element>
-
+<my-custom-element></my-custom-element>
 </body>
 </html>

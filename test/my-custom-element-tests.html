@@ -1,0 +1,19 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="../bower_components/webcomponentsjs/webcomponents-lite.js"></script>
+  <script src="../bower_components/web-component-tester/browser.js"></script>
+  <link rel="import" href="../my-custom-element.html">
+</head>
+<body>
+<my-custom-element id="fixture"></my-custom-element>
+<script>
+  suite('<my-custom-element>', function() {
+    test('is awesomest', function() {
+      assert.isTrue(document.getElementById('fixture').awesomest);
+    });
+  });
+</script>
+</body>
+</html>

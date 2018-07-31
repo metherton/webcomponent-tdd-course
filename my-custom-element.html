@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>web components</title>
+  <script>
+    class MyCustomElement extends HTMLElement {
+      constructor() {
+        super();
+        console.log('my custom element constructed');
+      }
+      connectedCallback() {
+        console.log('my custom element added to the DOM');
+        this.awesomest = true;
+      }
+    }
+    window.customElements.define('my-custom-element', MyCustomElement);
+  </script>
+</head>
+<body>
+
+
+
+</body>
+</html>
