@@ -6,6 +6,12 @@
   <link rel="import" href="my-custom-element.html" />
 </head>
 <body>
-<my-custom-element></my-custom-element>
+
+  <script>
+    let $ce = document.createElement('my-custom-element');
+    setTimeout(() => {
+      document.body.appendChild($ce);
+    }, 3000);
+  </script>
 </body>
 </html>
