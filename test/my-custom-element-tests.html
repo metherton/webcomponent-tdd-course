@@ -11,7 +11,8 @@
 <script>
   suite('<my-custom-element>', function() {
     test('is awesomest', function() {
-      assert.isTrue(document.getElementById('fixture').awesomest);
+      let el = document.getElementById('fixture');
+      assert.isTrue(el.awesomest);
     });
   });
 </script>

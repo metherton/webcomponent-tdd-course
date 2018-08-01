@@ -1,0 +1,39 @@
+
+  <script>
+    class DoDivision extends HTMLElement {
+
+      divideByTen(value) {
+        console.log(parseInt(value) / 10);
+      }
+
+//      constructor() {
+//        super();
+//        console.log('my custom element constructed');
+//      }
+//      connectedCallback() {
+//        console.log('my custom element added to the DOM');
+//        this.awesomest = true;
+//      }
+//
+//      static get observedAttributes() {
+//        return ['demo'];
+//      }
+//
+//      attributeChangedCallback(name, oldValue, newValue) {
+//        console.log('attribute changed', name, oldValue, newValue);
+//      }
+//
+//      disconnectedCallback() {
+//        console.log('my custom element removed from the DOM');
+//      }
+    }
+    window.customElements.define('do-division', DoDivision);
+
+    class DoMultiply extends DoDivision {
+      multiplyByTen(value) {
+        console.log(parseInt(value) * 10);
+      }
+    }
+    window.customElements.define('do-multiply', DoMultiply);
+
+  </script>
