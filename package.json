@@ -10,5 +10,8 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Martin",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "document-register-element": "1.11.0"
+  }
 }
