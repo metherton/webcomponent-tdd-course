@@ -3,11 +3,35 @@ class RwPoll extends HTMLElement {
   constructor() {
     super();
     this._attached = false;
-    this._data = {'question' : 'is this a static question ?', 'answers': ['yes of course it is', 'No it is definitely not']};
+    this._data = null;
     // $ used for anything which appears in the DOM .. just a convention
     this._selected  = null;
     this._$question = null;
     this._$answers = null;
+  }
+
+  set data(data) {
+    if (this._data === data) return;
+    this._data = data;
+    this._render();
+  }
+
+  set selected(index) {
+    const $answer = this._$answers.querySelector(`li:nth-child(${index + 1})`);
+    if ($answer !== null) {
+      this._$answers.querySelectorAll('li').forEach((li) => {
+        li.classList.remove('selected');
+      });
+      $answer.classList.add('selected');
+      this._selected = index;
+    }
+  }
+
+  get selected() {
+    return this._selected;
+  }
+  get data() {
+    return this._data;
   }
 
   connectedCallback() {
@@ -69,10 +93,8 @@ class RwPoll extends HTMLElement {
     this._$answers = this.querySelector('#answers');
     this._$answers.addEventListener('click', (event) => {
       this._$answers.querySelectorAll('li').forEach(($li, index) => {
-        $li.classList.remove('selected');
         if ($li === event.target) {
-          this._selected = index;
-          $li.classList.add('selected');
+          this.selected = index;
         }
       });
     });
