@@ -15,7 +15,7 @@ class RwComponentSkeleton extends HTMLElement {
       
     `;
     this._$text = this._root.querySelector('#text'); //store important elements for later use..prefixing DOM elements with $
-//    this._render();
+  //  this._render();
   }
 
   _render() {
@@ -36,7 +36,7 @@ class RwComponentSkeleton extends HTMLElement {
   set property1(data) {
     if (this._private1 === data) return;
     this._private1 = data;
-//    this._render();
+  //  this._render();
   }
 
   get property1() {

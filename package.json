@@ -12,6 +12,8 @@
   "author": "Martin",
   "license": "MIT",
   "devDependencies": {
-    "document-register-element": "1.11.0"
+    "babel-eslint": "9.0.0",
+    "document-register-element": "1.11.0",
+    "eslint": "5.4.0"
   }
 }
