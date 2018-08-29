@@ -27,6 +27,11 @@ class MeContainer extends HTMLElement {
           </me-card>
       </div>
     `;
+    
+    this._$meCard = this._root.querySelector('me-card');
+    this._$meCard.addEventListener('select-card', (event) => {
+      console.log('button selected:' + event.detail);
+    });
   }
 
 }

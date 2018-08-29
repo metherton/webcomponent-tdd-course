@@ -23,10 +23,27 @@ class MeCard extends HTMLElement {
         
       </style>
       <div class="box green">
-        <button type="button">Red</button>
-        <button type="button">Green</button>
+        <button id="redBtn" type="button">Red</button>
+        <button id="yellowBtn" type="button">Yellow</button>
+        <button id="baseBtn" type="button">Base</button>
       </div>
     `;
+
+    this._$redButton = this._root.querySelector("#redBtn");
+    this._$yellowButton = this._root.querySelector("#yellowBtn");
+    this._$baseButton = this._root.querySelector("#baseBtn");
+
+    this._$redButton.addEventListener('click', (event) => {
+      this.dispatchEvent(new CustomEvent('select-card', {detail: 'red'}));
+    });
+    this._$yellowButton.addEventListener('click', (event) => {
+      this.dispatchEvent(new CustomEvent('select-card', {detail: 'yellow'}));
+    });
+    this._$baseButton.addEventListener('click', (event) => {
+      this.dispatchEvent(new CustomEvent('select-card', {detail: 'base'}));
+    });
+
+
   }
 
 }
