@@ -18,6 +18,12 @@ class MeConversation extends HTMLElement {
           background: #cc0000;
           float: left;
         }
+        :host([theme="yellow"]) .box {
+          width: 300px;
+          height: 200px;
+          background: #f0ad4e;
+          float: left;
+        }
       </style>
       <div class="box">
       </div>
