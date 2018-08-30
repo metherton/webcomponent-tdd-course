@@ -22,15 +22,20 @@ class MeContainer extends HTMLElement {
         }      
         
       </style>
-      <div class="box blue">
+      <div id="container" class="box blue">
           <me-card>
           </me-card>
       </div>
     `;
-    
+
     this._$meCard = this._root.querySelector('me-card');
     this._$meCard.addEventListener('select-card', (event) => {
       console.log('button selected:' + event.detail);
+      const conversation = document.createElement('me-conversation');
+      conversation.setAttribute('theme', event.detail);
+      conversation.classList.add(event.detail);
+      const container = this._root.querySelector('#container');
+      container.appendChild(conversation);
     });
   }
 
