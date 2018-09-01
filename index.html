@@ -4,17 +4,118 @@
   <meta charset="UTF-8">
   <title>Title</title>
   <link rel="stylesheet" href="cssreset.css" type="text/css" />
+  <style>
+    html, body, main {
+      height: 100%;
+      width: 100%;
+    }
+    .container {
+      display: flex;
+      height: 100%;
+      width: 100%;
+    }
+    .section {
+      flex-direction: column;
+      align-items: center;
+      color: white;
+      width: 25%;
+      justify-content: space-around;
+      /*height: 100%;*/
+      display: flex;
+      border-right: solid 1px;
+      border-color: #04050b;
+      background-color: #0d152d;
+      transition-property: background-color, color, transform;
+      transition-duration: 1s;
+    }
 
-  <script src="me-container.js"></script>
-  <script src="me-card.js"></script>
-  <script src="me-conversation.js"></script>
-  <script src="me-strip.js"></script>
+    hr {
+      border-color: #04050b;
+      width: 70%;
+      margin-top: 30px;
+    }
+
+    .top {
+      display: flex;
+    }
+    .section:hover {
+      background-color: #FFD700;
+      color: #0d152d;
+      transform: translateY(-100px);
+    }
+
+    .inner {
+      justify-content: center;
+      align-items: center;
+    }
+
+    .image-holder {
+      width: 100%;
+      height: 150px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    h1 {
+      font-size: 2em;
+      /*font-weight: bold;*/
+      font-family: 'Lato', sans-serif;
+      text-align: center;
+      width: 100%;
+    }
+  </style>
 </head>
 <body>
-
-  <me-container>
-
-  </me-container>
-
+  <div class="container">
+    <div class="section">
+      <div class="top">
+        <div class="inner">
+          <div class="image-holder">
+            <img src="images/martin.jpg">
+          </div>
+          <h1>Martin Etherton</h1>
+        </div>
+      </div>
+      <div class="bottom">Bottom</div>
+    </div>
+    <div class="section">
+      <div class="top">
+        <div class="inner">
+          <div class="image-holder">
+            <img src="images/twitter.jpeg">
+          </div>
+          <h1>One Name Study</h1>
+          <hr>
+        </div>
+      </div>
+      <div class="bottom">2.1</div>
+    </div>
+    <div class="section">
+      <div class="top">
+        <div class="inner">
+          <div class="image-holder">
+            <img src="images/twitter.jpeg">
+          </div>
+          <h1>Projects</h1>
+          <hr>
+        </div>
+      </div>
+      <div class="bottom">
+        3.1
+      </div>
+    </div>
+    <div class="section">
+      <div class="top">
+        <div class="inner">
+          <div class="image-holder">
+            <img src="images/twitter.jpeg">
+          </div>
+          <h1>Social Media</h1>
+          <hr>
+        </div>
+      </div>
+      <div class="bottom">4.1</div>
+    </div>
+  </div>
 </body>
 </html>
