@@ -53,8 +53,8 @@
       background-color: #0d152d;
       /*transition-property: background-color, color, transform;*/
       /*transition-duration: 0.75s;*/
-      filter: grayscale(100%);
-      transition: filter 0.75s ease-in-out;
+      /*filter: grayscale(100%);*/
+      /*transition: filter 0.75s ease-in-out;*/
     }
 
     hr {
@@ -74,7 +74,12 @@
       transform: translateY(-90px);
     }
 
-    .section.info:hover {
+    .section.info img {
+      filter: grayscale(100%);
+      transition: filter 0.75s ease-in-out;
+    }
+
+    .section.info:hover img {
       filter: grayscale(0%);
     }
 
