@@ -5,6 +5,7 @@
   <title>Title</title>
   <link rel="stylesheet" href="cssreset.css" type="text/css" />
   <style>
+
     html, body, main {
       height: 100%;
       width: 100%;
@@ -16,9 +17,9 @@
       width: 100%;
     }
 
-    .container:hover {
-      background-color: #FFD700;
-    }
+    /*.container:hover {*/
+      /*background-color: #FFD700;*/
+    /*}*/
 
     .section.content {
       height: 130%;
@@ -57,10 +58,16 @@
       /*transition: filter 0.75s ease-in-out;*/
     }
 
-    hr {
+    .section.content hr {
+      transition: border-color 0.75s ease-in-out;
       border-color: #04050b;
       width: 70%;
-      margin-top: 30px;
+      margin-top: 40px;
+    }
+
+    .section.content:hover hr {
+      /*border-color: #FFD700;*/
+      border-color: #FFD700;
     }
 
     .top {
@@ -72,6 +79,7 @@
       color: #0d152d;
       /*border-color: red;*/
       transform: translateY(-90px);
+      cursor: pointer;
     }
 
     .section.info img {
@@ -166,7 +174,7 @@
       <div class="top">
         <div class="inner">
           <div class="image-holder">
-            <img src="images/twitter.jpeg">
+            <img src="images/familytree.png">
           </div>
           <h1>One Name Study</h1>
           <hr>
@@ -178,7 +186,7 @@
       <div class="top">
         <div class="inner">
           <div class="image-holder">
-            <img src="images/twitter.jpeg">
+            <img src="images/GitHub-Mark-Light-64px.png">
           </div>
           <h1>Projects</h1>
           <hr>
@@ -192,7 +200,7 @@
       <div class="top">
         <div class="inner">
           <div class="image-holder">
-            <img src="images/twitter.jpeg">
+            <img src="images/flogo-HexRBG-Wht-58.png">
           </div>
           <h1>Social Media</h1>
           <hr>
