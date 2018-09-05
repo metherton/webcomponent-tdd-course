@@ -7,9 +7,15 @@
   <script>
     document.addEventListener('click', (e) => {
       const url = e.target.getAttribute('data-url');
-      if (url !== undefined) {
-        window.open(url);
-      }
+    if (url !== undefined) {
+      window.open(url);
+    }
+    });
+    document.addEventListener('tap', (e) => {
+      const url = e.target.getAttribute('data-url');
+    if (url !== undefined) {
+      window.open(url);
+    }
     });
   </script>
   <style>
