@@ -4,6 +4,14 @@
   <meta charset="UTF-8">
   <title>Title</title>
   <link rel="stylesheet" href="cssreset.css" type="text/css" />
+  <script>
+    document.addEventListener('click', (e) => {
+      const url = e.target.getAttribute('data-url');
+      if (url !== undefined) {
+        window.open(url);
+      }
+    });
+  </script>
   <style>
 
     html, body, main {
@@ -199,7 +207,8 @@
       </div>
       <div class="bottom">2.1</div>
     </div>
-    <div class="section content">
+
+    <div class="section content" data-url="http://www.github.com/metherton">
       <div class="top">
         <div class="inner">
           <div class="image-holder">
