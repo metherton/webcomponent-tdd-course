@@ -20,15 +20,16 @@ class MeConversation extends HTMLElement {
         }
         
         me-strip {
-          --box-color: white;
+          --box-color: orange;
           --box-styles {
             background: #eed3d7;
+            border: 3px solid brown;
           }
         }
                   
         :host([theme="yellow"]) .box {
           width: 300px;
-          height: 400px;
+          height: 600px;
           background: #f0ad4e;
           float: left;
         }

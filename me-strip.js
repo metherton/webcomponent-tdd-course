@@ -14,7 +14,7 @@ class MeStrip extends HTMLElement {
       <style>
         .box {
           width: 300px;
-          height: 100px;
+          height: 200px;
           @apply --box-styles;
           background: var(--box-color, #eed3d7);
         }   
