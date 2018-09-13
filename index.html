@@ -16,6 +16,46 @@
       animation: crt 10s infinite;
     }
 
+    @keyframes text-blur {
+      0%, 50%, 90%, 100% { text-shadow: #0a0 0 0 1px; }
+      60%, 80% { text-shadow: #0a0 0 0 2px; }
+      70% { text-shadow: #0a0 0 0 5px; }
+    }
+    @keyframes text-blink {
+      0% {
+        transform: skewX(0deg);
+      }
+      20% {
+        transform: skewX(0deg);
+      }
+      21% {
+        transform: skewX(-3deg);
+      }
+      35% {
+        opacity: 1;
+        transform: skewX(0deg);
+      }
+      35.5% {
+        opacity: .3;
+        transform: skewX(70deg);
+      }
+      36% {
+        transform: skewX(-60deg);
+      }
+      36.5% {
+        opacity: 1;
+        transform: skewX(0deg);
+      }
+      100% {
+        transform: skewX(0deg);
+      }
+    }
+
+
+    body {
+      animation: text-blur 4s infinite, text-blink 11s infinite;
+    }
+
     @keyframes crt {
       0% {background-position: 0 0, 0 0; animation-timing-function: linear}
       100% {background-position: 0 -180px, 0 0;}
