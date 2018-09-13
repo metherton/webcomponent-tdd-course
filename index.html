@@ -29,6 +29,17 @@
     li {
       margin-top: 1.0em;
     }
+    a:hover {
+      cursor: pointer;
+    }
+    a.nostyle:link {
+      text-decoration: inherit;
+      color: inherit;
+    }
+    a.nostyle:visited {
+      text-decoration: inherit;
+      color: inherit;
+    }
   </style>
 
 </head>
@@ -38,8 +49,8 @@
   <section class="ls">$&nbsp;ls</section>
   <nav>
     <ul>
-      <li>about-me/</li>
-      <li>one-name-study/</li>
+      <li><a class="nostyle" href="./about-me" target="_blank">about-me/</a></li>
+      <li><a class="nostyle" href="./one-name-study" target="_blank">one-name-study/</a></li>
     </ul>
   </nav>
   <section class="ls">$</section>
