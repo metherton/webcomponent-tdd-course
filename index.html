@@ -12,7 +12,15 @@
       font-family: monospace;
       font-weight: bold;
       font-size: 2em;
+      background-image: repeating-linear-gradient(transparent, black, green 80%, black);
+      animation: crt 10s infinite;
     }
+
+    @keyframes crt {
+      0% {background-position: 0 0, 0 0; animation-timing-function: linear}
+      100% {background-position: 0 -180px, 0 0;}
+    }
+
     header {
       margin-top: 0.5em;
       margin-left: 0.5em;
