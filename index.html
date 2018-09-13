@@ -4,247 +4,29 @@
   <meta charset="UTF-8">
   <title>Title</title>
   <link rel="stylesheet" href="cssreset.css" type="text/css" />
-  <script>
-    document.addEventListener('click', (e) => {
-      const url = e.target.getAttribute('data-url');
-    if (url !== undefined) {
-      window.open(url);
-    }
-    });
-    document.addEventListener('tap', (e) => {
-      const url = e.target.getAttribute('data-url');
-    if (url !== undefined) {
-      window.open(url);
-    }
-    });
-  </script>
+
   <style>
-
-    html, body, main {
-      height: 100%;
-      width: 100%;
+    html {
+      background-color: black;
+      color: #0a0;
+      font-family: monospace;
+      font-weight: bold;
+      font-size: 2em;
     }
-
-    .container {
-      display: flex;
-      height: 100%;
-      width: 100%;
+    header {
+      margin-top: 0.5em;
+      margin-left: 0.5em;
+      margin-bottom: 0.5em;
     }
-
-    /*.container:hover {*/
-      /*background-color: #FFD700;*/
-    /*}*/
-
-    .section.content {
-      height: 130%;
-      flex-direction: column;
-      align-items: center;
-      color: white;
-      width: 25%;
-      justify-content: space-around;
-      /*height: 100%;*/
-      display: flex;
-      border-right: solid 1px;
-      border-left: solid 1px;
-      border-color: #04050b;
-      /*border-color: red;*/
-      background-color: #0d152d;
-      transition-property: background-color, color, transform;
-      transition-duration: 0.75s;
+    section.last-login {
+      margin-left: 0.5em;
     }
-
-    .section.info {
-      flex-direction: column;
-      align-items: center;
-      color: white;
-      width: 25%;
-      justify-content: space-around;
-      /*height: 100%;*/
-      display: flex;
-      border-right: solid 1px;
-      border-left: solid 1px;
-      border-color: #04050b;
-      /*border-color: red;*/
-      background-color: #0d152d;
-      /*transition-property: background-color, color, transform;*/
-      /*transition-duration: 0.75s;*/
-      /*filter: grayscale(100%);*/
-      /*transition: filter 0.75s ease-in-out;*/
-    }
-
-    .section.content hr {
-      transition: border-color 0.75s ease-in-out;
-      border-color: #04050b;
-      width: 70%;
-      margin-top: 40px;
-    }
-
-    .section.content:hover hr {
-      /*border-color: #FFD700;*/
-      border-color: #FFD700;
-    }
-
-    .top {
-      display: flex;
-    }
-
-    .bottom {
-      width: 100%;
-    }
-
-    .section.content:hover {
-      background-color: #FFD700;
-      color: #0d152d;
-      /*border-color: red;*/
-      transform: translateY(-90px);
-      cursor: pointer;
-    }
-
-    .section.info img {
-      filter: grayscale(100%);
-      transition: filter 0.75s ease-in-out;
-    }
-
-    .section.info:hover img {
-      filter: grayscale(0%);
-    }
-
-    /*img {*/
-
-    /*}*/
-
-    /*img:hover {*/
-      /*filter: grayscale(0%);*/
-    /*}*/
-
-    /*.section .background {*/
-      /*opacity: 0;*/
-      /*position: absolute;*/
-      /*top: 0;*/
-      /*right: 0;*/
-      /*bottom: 0;*/
-      /*left: 0;*/
-      /*background-color: #ffd700;*/
-      /*background-image: linear-gradient(45deg, #ae8800, #ffd700);*/
-      /*background: #ffd700;*/
-      /*background: linear-gradient(45deg, #ae8800, #ffd700);*/
-      /*z-index: 99;*/
-      /*transition: opacity 0.7s ease;*/
-    /*}*/
-
-    .inner {
-      justify-content: center;
-      align-items: center;
-    }
-
-    .image-holder {
-      width: 100%;
-      height: 150px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-    h1 {
-      font-size: 2.2em;
-      font-weight: 100;
-      /*font-weight: bold;*/
-      font-family: 'Lato', sans-serif;
-      text-align: center;
-      width: 100%;
-    }
-
-    @media only screen and (max-device-width: 600px) {
-      .container {
-        display: block;
-      }
-
-      .section.info {
-        width: 100%;
-      }
-
-      .section.content {
-        width: 100%;
-      }
-
-      .section .inner {
-        width: 100%;
-      }
-    }
-
-    @media only screen and (max-width: 900px) {
-      .container {
-        display: block;
-      }
-
-      .section.info {
-        width: 100%;
-      }
-
-      .section.content {
-        width: 100%;
-      }
-
-      .section .inner {
-        width: 100%;
-      }
-    }
-
-
   </style>
+
 </head>
 <body>
-  <div class="container">
-    <div class="section info">
-      <div class="top">
-        <div class="inner">
-          <div class="image-holder">
-            <img src="images/martin.jpg">
-          </div>
-          <h1 style="margin-top: 10px">Martin Etherton</h1>
-        </div>
-      </div>
-      <div class="bottom">Bottom</div>
-    </div>
-    <div class="section content">
-      <div class="top">
-        <div class="inner">
-          <div class="image-holder">
-            <img src="images/familytree.png">
-          </div>
-          <h1>One Name Study</h1>
-          <hr>
-        </div>
-      </div>
-      <div class="bottom">2.1</div>
-    </div>
-    <div class="section content" data-url="http://www.github.com/metherton">
-      <div class="top">
-        <div class="inner">
-          <div class="image-holder">
-            <img src="images/GitHub-Mark-Light-64px.png">
-          </div>
-          <h1>Projects</h1>
-          <hr>
-        </div>
-      </div>
-      <div class="bottom">
-        3.1
-      </div>
-    </div>
-    <div class="section content" data-url="http://www.twitter.com/metherton">
-      <div class="top">
-        <div class="inner">
-          <div class="image-holder">
-            <img src="images/flogo-HexRBG-Wht-58.png">
-          </div>
-          <h1>Social Media</h1>
-          <hr>
-        </div>
-      </div>
-      <div class="bottom">
-        <a class="twitter-timeline" data-height="300" href="https://twitter.com/metherton?ref_src=twsrc%5Etfw">Tweets by metherton</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-      </div>
-    </div>
-  </div>
+  <header>martinetherton.com</header>
+  <section class="last-login">Last login: <script>document.write((new Date()).toString())</script></section>
+
 </body>
 </html>

@@ -24,8 +24,6 @@ class RwSlideMenu extends HTMLElement {
                     transition: background-color 300ms ease-in;
                 }
                 .container {
-                
-                
                     width: var(--menu-width, 80%);
                     background: var(--menu-bg-color, #FFF);
                     height: 100%;
