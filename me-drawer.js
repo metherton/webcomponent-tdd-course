@@ -11,6 +11,10 @@ class MeDrawer extends HTMLElement {
   connectedCallback() {
     this._root.innerHTML = `
       <style>
+        html, body, div {
+          background-color: grey;
+        }
+      
         #container {
           position: fixed;
           left: -250px;
