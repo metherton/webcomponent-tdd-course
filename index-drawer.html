@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>martinetherton.com</title>
+  <link rel="stylesheet" href="cssreset.css" type="text/css" />
+  <script src="me-drawer.js"></script>
+
+  <style>
+    html {
+      background-color: black;
+      color: #0a0;
+      font-family: monospace;
+      font-weight: bold;
+      font-size: 2em;
+      background-image: repeating-linear-gradient(transparent, black, green 80%, black);
+      animation: crt 10s infinite;
+    }
+
+    @keyframes text-blur {
+      0%, 50%, 90%, 100% { text-shadow: #0a0 0 0 1px; }
+      60%, 80% { text-shadow: #0a0 0 0 2px; }
+      70% { text-shadow: #0a0 0 0 5px; }
+    }
+    @keyframes text-blink {
+      0% {
+        transform: skewX(0deg);
+      }
+      20% {
+        transform: skewX(0deg);
+      }
+      21% {
+        transform: skewX(-3deg);
+      }
+      35% {
+        opacity: 1;
+        transform: skewX(0deg);
+      }
+      35.5% {
+        opacity: .3;
+        transform: skewX(70deg);
+      }
+      36% {
+        transform: skewX(-60deg);
+      }
+      36.5% {
+        opacity: 1;
+        transform: skewX(0deg);
+      }
+      100% {
+        transform: skewX(0deg);
+      }
+    }
+
+
+    body {
+      animation: text-blur 4s infinite, text-blink 11s infinite;
+    }
+
+    @keyframes crt {
+      0% {background-position: 0 0, 0 0; animation-timing-function: linear}
+      100% {background-position: 0 -180px, 0 0;}
+    }
+
+    header {
+      margin-top: 0.5em;
+      margin-left: 0.5em;
+    }
+    .last-login, .ls {
+      margin-top: 0.5em;
+      margin-left: 0.5em;
+    }
+    nav ul {
+      margin-top: 1em;
+      margin-left: 2em;
+      margin-bottom: 1em;
+    }
+    li {
+      margin-top: 1.0em;
+    }
+    a:hover {
+      cursor: pointer;
+    }
+    a.nostyle:link {
+      text-decoration: inherit;
+      color: inherit;
+    }
+    a.nostyle:visited {
+      text-decoration: inherit;
+      color: inherit;
+    }
+    #container {
+      transition: margin-left .5s;
+      margin-left: 0;
+    }
+
+    #container.open {
+      margin-left: 250px;
+    }
+  </style>
+
+</head>
+<body>
+
+  <script>
+    document.addEventListener("click", (event) => {
+      const $drawer = document.getElementById("drawer");
+      const container = document.getElementById("container");
+
+      switch (event.target.id) {
+        case "expand":
+          $drawer.open = true;
+          container.classList.add("open");
+          break;
+        case "collapse":
+          $drawer.open = false;
+          container.classList.remove("open");
+          break;
+      }
+
+    });
+  </script>
+
+  <me-drawer id="drawer"></me-drawer>
+  <div id="container">
+    <header>martinetherton.com</header>
+    <section class="last-login">Last login: <script>document.write((new Date()).toUTCString())</script></section>
+    <section class="ls">$&nbsp;ls<input type="button" id="expand" value="open" ><input type="button" id="collapse" value="close" ></section>
+    <nav>
+      <ul>
+        <li><a class="nostyle" href="./about-me">about-me/</a></li>
+        <li><a class="nostyle" href="./one-name-study">one-name-study/</a></li>
+      </ul>
+    </nav>
+    <section class="ls">$</section>
+  </div>
+
+</body>
+</html>
