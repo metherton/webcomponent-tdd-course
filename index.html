@@ -2,8 +2,9 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Title</title>
+  <title>martinetherton.com</title>
   <link rel="stylesheet" href="cssreset.css" type="text/css" />
+  <script src="me-drawer.js"></script>
 
   <style>
     html {
@@ -88,13 +89,43 @@
       text-decoration: inherit;
       color: inherit;
     }
+    #container {
+      transition: margin-left .5s;
+      margin-left: 0;
+    }
+
+    #container.open {
+      margin-left: 250px;
+    }
   </style>
 
 </head>
 <body>
+
+<script>
+  document.addEventListener("click", (event) => {
+    const $drawer = document.getElementById("drawer");
+  const container = document.getElementById("container");
+
+  switch (event.target.id) {
+    case "expand":
+      $drawer.open = true;
+      container.classList.add("open");
+      break;
+    case "collapse":
+      $drawer.open = false;
+      container.classList.remove("open");
+      break;
+  }
+
+  });
+</script>
+
+<me-drawer id="drawer"></me-drawer>
+<div id="container">
   <header>martinetherton.com</header>
   <section class="last-login">Last login: <script>document.write((new Date()).toUTCString())</script></section>
-  <section class="ls">$&nbsp;ls</section>
+  <section class="ls">$&nbsp;ls<input type="button" id="expand" value="open" ><input type="button" id="collapse" value="close" ></section>
   <nav>
     <ul>
       <li><a class="nostyle" href="./about-me">about-me/</a></li>
@@ -102,5 +133,7 @@
     </ul>
   </nav>
   <section class="ls">$</section>
+</div>
+
 </body>
 </html>
