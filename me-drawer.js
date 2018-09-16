@@ -12,22 +12,34 @@ class MeDrawer extends HTMLElement {
     this._root.innerHTML = `
       <style>
         html, body, div {
-          background-color: grey;
+          height: 100%;          
         }
       
         #container {
+          overflow: hidden;
           position: fixed;
-          max-width: 450px;
+          max-width: 600px;
           height: 100%;
-          left: -450px;
-          transition: transform 0.5s ease-in;
+          left: -600px;
+          z-index: 1;
+          transition: transform 1s;
+          width:100%;
+          text-align: right;
+        }
+        .close-drawer {
+          margin-right: 1em;
+        }
+        
+        .close-drawer:hover {
+          cursor: pointer;
         }
         
         #container.open {
-          transform: translateX(450px);
+          transform: translateX(600px);
         }
       </style>
       <div id="container">
+        <div id="collapse" class="close-drawer">x</div>
         <p id="text">ME Drawer...</p>    
        </div>
       

@@ -29,7 +29,7 @@ class RwSlideMenu extends HTMLElement {
                     height: 100%;
                     transform: translateX(-100%);
                     will-change: transform;
-                    transition: transform 300ms ease-in;
+                    transition: transform 700ms ease-in;
                     box-shadow: 1px 0 3px rgba(51,51,51,0.25);
                 }
                 .title {
