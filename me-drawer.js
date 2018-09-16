@@ -11,7 +11,7 @@ class MeDrawer extends HTMLElement {
   connectedCallback() {
     this._root.innerHTML = `
       <style>
-        html, body, div {
+        html, body {
           height: 100%;          
         }
       
@@ -24,6 +24,10 @@ class MeDrawer extends HTMLElement {
           z-index: 1;
           transition: transform 1s;
           width:100%;
+          
+        }
+        .close-drawer-container {
+          width: 100%;
           text-align: right;
         }
         .close-drawer {
@@ -39,8 +43,11 @@ class MeDrawer extends HTMLElement {
         }
       </style>
       <div id="container">
-        <div id="collapse" class="close-drawer">x</div>
-        <p id="text">ME Drawer...</p>    
+        <div class="close-drawer-container">
+          <div id="collapse" class="close-drawer">x</div>      
+        </div>
+        <p id="text">ME Drawer...</p>  
+        <div>some more text</div>  
        </div>
       
     `;
@@ -50,7 +57,7 @@ class MeDrawer extends HTMLElement {
   }
 
   _render() {
-    this._$text.innerText = '... is awesome  dfasdf asdfad asdf asdf asdf asdf!'; // selectively update only parts of the template which need to change
+    this._$text.innerText = '... is awesome  dfasdf asd!'; // selectively update only parts of the template which need to change
   }
 
   // observe attribute changes
