@@ -10,6 +10,7 @@ class MeDrawer extends HTMLElement {
 
   connectedCallback() {
     this._root.innerHTML = `
+      <link rel="stylesheet" href="cssreset.css" type="text/css" />
       <style>
         html, body {
           height: 100%;          
@@ -18,9 +19,9 @@ class MeDrawer extends HTMLElement {
         #container {
           overflow: hidden;
           position: fixed;
-          max-width: 600px;
+          max-width: 650px;
           height: 100%;
-          left: -600px;
+          left: -650px;
           z-index: 1;
           transition: transform 1s;
           width:100%;
@@ -39,15 +40,31 @@ class MeDrawer extends HTMLElement {
         }
         
         #container.open {
-          transform: translateX(600px);
+          transform: translateX(650px);
+        }
+        .info {
+          margin-top: 1em;
+          margin-bottom: 1em;
+          margin-left: 2em;
+        }
+        li {
+          margin-top: 1.0em;
         }
       </style>
       <div id="container">
         <div class="close-drawer-container">
           <div id="collapse" class="close-drawer">x</div>      
         </div>
-        <p id="text">ME Drawer...</p>  
-        <div>some more text</div>  
+        <p id="text"></p>
+        <section>$&nbsp;printenv</section>
+        <ul class="info">
+          <li>name=Martin&nbsp;Etherton</li>
+          <li>birth=March&nbsp;4th,&nbsp;1963</li>
+          <li>address=Marknesse,&nbsp;Netherlands</li>
+          <li>hobbies=football,&nbsp;cycling,&nbsp;skiing</li>
+        </ul>
+        <section>$</section>
+         
        </div>
       
     `;
@@ -57,7 +74,7 @@ class MeDrawer extends HTMLElement {
   }
 
   _render() {
-    this._$text.innerText = '... is awesome  dfasdf asd!'; // selectively update only parts of the template which need to change
+ //   this._$text.innerText = '... is awesome  dfasdf asd!'; // selectively update only parts of the template which need to change
   }
 
   // observe attribute changes
