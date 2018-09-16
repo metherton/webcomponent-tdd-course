@@ -19,9 +19,9 @@ class MeDrawer extends HTMLElement {
         #container {
           overflow: hidden;
           position: fixed;
-          max-width: 200px;
+          max-width: 650px;
           height: 100%;
-          left: -200px;
+          left: -650px;
           z-index: 1;
           transition: transform 1s;
           width:100%;
@@ -40,7 +40,7 @@ class MeDrawer extends HTMLElement {
         }
         
         #container.open {
-          transform: translateX(200px);
+          transform: translateX(650px);
         }
         .info {
           margin-top: 1em;
