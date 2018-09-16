@@ -6,6 +6,7 @@
   <link rel="stylesheet" href="cssreset.css" type="text/css" />
   <script src="me-drawer.js"></script>
 
+
   <style>
     html {
       background-color: black;
@@ -131,7 +132,6 @@
     const $container = document.getElementById("container");
 
     $drawer.addEventListener("click", (event) => {
-      console.log("drwaer clicked");
       $drawer.open = false;
       $container.classList.remove("open");
     });
