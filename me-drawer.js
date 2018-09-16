@@ -17,12 +17,14 @@ class MeDrawer extends HTMLElement {
       
         #container {
           position: fixed;
-          left: -250px;
+          max-width: 450px;
+          height: 100%;
+          left: -450px;
           transition: transform 0.5s ease-in;
         }
         
         #container.open {
-          transform: translateX(250px);
+          transform: translateX(450px);
         }
       </style>
       <div id="container">
@@ -36,7 +38,7 @@ class MeDrawer extends HTMLElement {
   }
 
   _render() {
-    this._$text.innerText = '... is awesome !'; // selectively update only parts of the template which need to change
+    this._$text.innerText = '... is awesome  dfasdf asdfad asdf asdf asdf asdf!'; // selectively update only parts of the template which need to change
   }
 
   // observe attribute changes
