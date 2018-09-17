@@ -13,6 +13,7 @@ class MeDrawer extends HTMLElement {
       <style>
         html, body, div {
           background-color: grey;
+          height: 100%;
         }
       
         #container {
