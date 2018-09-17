@@ -12,7 +12,6 @@ class MeDrawer extends HTMLElement {
     this._root.innerHTML = `
       <style>
         html, body, div {
-          
           height: 100%;
         }
       

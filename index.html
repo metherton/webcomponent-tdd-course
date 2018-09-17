@@ -76,7 +76,7 @@
     li {
       margin-top: 1.0em;
     }
-    a:hover {
+    a:hover, li:hover {
       cursor: pointer;
     }
     a.nostyle:link {
@@ -121,10 +121,10 @@
 <div id="container">
   <header>martinetherton.com</header>
   <section class="last-login">Last login: <script>document.write((new Date()).toUTCString())</script></section>
-  <section class="ls">$&nbsp;ls<input type="button" id="expand" value="open" ><input type="button" id="collapse" value="close" ></section>
+  <section class="ls">$&nbsp;ls<input type="button" id="collapse" value="close" ></section>
   <nav>
     <ul>
-      <li><a class="nostyle" href="./about-me">about-me/</a></li>
+      <li id="expand">about-me/</li>
       <li><a class="nostyle" href="./one-name-study">one-name-study/</a></li>
     </ul>
   </nav>
