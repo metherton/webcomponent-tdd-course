@@ -6,6 +6,7 @@
   <link rel="stylesheet" href="cssreset.css" type="text/css" />
   <script src="me-drawer.js"></script>
 
+
   <style>
     html {
       background-color: black;
@@ -88,48 +89,69 @@
       color: inherit;
     }
     #container {
-      transition: margin-left .5s;
+      transition: margin-left 1s;
       margin-left: 0;
       height: 100%;
     }
     #container.open {
-      margin-left: 600px;
+      margin-left: 650px;
+    }
+    button {
+      display: inline-block;
+      border: none;
+      margin: 0;
+      text-decoration: none;
+      background: transparent;
+      color: #0a0;
+      font-family: monospace;
+      font-size: 1em;
+      font-weight: bold;
+      cursor: pointer;
+      text-align: center;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+    }
+    button:focus {
+      outline: none;
     }
   </style>
-
 </head>
 <body>
-
-<script>
-  document.addEventListener("click", (event) => {
-    const $drawer = document.getElementById("drawer");
-  const container = document.getElementById("container");
-  switch (event.target.id) {
-    case "expand":
-      $drawer.open = true;
-      container.classList.add("open");
-      break;
-    case "collapse":
-      $drawer.open = false;
-      container.classList.remove("open");
-      break;
-  }
-  });
-</script>
-
 <me-drawer id="drawer"></me-drawer>
 <div id="container">
   <header>martinetherton.com</header>
   <section class="last-login">Last login: <script>document.write((new Date()).toUTCString())</script></section>
-  <section class="ls">$&nbsp;ls<input type="button" id="collapse" value="close" ></section>
+  <section class="ls">$&nbsp;ls</section>
   <nav>
     <ul>
-      <li id="expand">about-me/</li>
+      <li><button class="button" id="expand">about-me/</button></li>
       <li><a class="nostyle" href="./one-name-study">one-name-study/</a></li>
     </ul>
   </nav>
   <section class="ls">$</section>
 </div>
+
+
+<script>
+  const $drawer = document.getElementById("drawer");
+  const $container = document.getElementById("container");
+  $drawer.addEventListener("click", (event) => {
+    $drawer.open = false;
+  $container.classList.remove("open");
+  });
+  document.addEventListener("click", (event) => {
+    switch (event.target.id) {
+  case "expand":
+    $drawer.open = true;
+    $container.classList.add("open");
+    break;
+  case "collapse":
+    $drawer.open = false;
+    $container.classList.remove("open");
+    break;
+  }
+  });
+</script>
 
 </body>
 </html>
