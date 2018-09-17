@@ -17,12 +17,12 @@ class MeDrawer extends HTMLElement {
       
         #container {
           position: fixed;
-          left: -250px;
+          left: -600px;
           transition: transform 0.5s ease-in;
         }
         
         #container.open {
-          transform: translateX(250px);
+          transform: translateX(600px);
         }
       </style>
       <div id="container">
