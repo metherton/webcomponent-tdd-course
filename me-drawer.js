@@ -10,71 +10,33 @@ class MeDrawer extends HTMLElement {
 
   connectedCallback() {
     this._root.innerHTML = `
-      <link rel="stylesheet" href="cssreset.css" type="text/css" />
       <style>
-        html, body {
-          height: 100%;          
+        html, body, div {
+          background-color: grey;
         }
       
         #container {
-          overflow: hidden;
           position: fixed;
-          max-width: 650px;
-          height: 100%;
-          left: -650px;
-          z-index: 1;
-          transition: transform 1s;
-          width:100%;
-          
-        }
-        .close-drawer-container {
-          width: 100%;
-          text-align: right;
-        }
-        .close-drawer {
-          margin-right: 1em;
-        }
-        
-        .close-drawer:hover {
-          cursor: pointer;
+          left: -250px;
+          transition: transform 0.5s ease-in;
         }
         
         #container.open {
-          transform: translateX(650px);
-        }
-        .info {
-          margin-top: 1em;
-          margin-bottom: 1em;
-          margin-left: 1em;
-        }
-        li {
-          margin-top: 1.0em;
+          transform: translateX(250px);
         }
       </style>
       <div id="container">
-        <div class="close-drawer-container">
-          <div id="collapse" class="close-drawer">x</div>      
-        </div>
-        <p id="text"></p>
-        <section>$&nbsp;printenv</section>
-        <ul class="info">
-          <li>name=Martin&nbsp;Etherton</li>
-          <li>birth=March&nbsp;4th,&nbsp;1963</li>
-          <li>address=Marknesse,&nbsp;Netherlands</li>
-          <li>hobbies=football,&nbsp;cycling,&nbsp;skiing</li>
-        </ul>
-        <section>$</section>
-         
+        <p id="text">ME Drawer...</p>    
        </div>
       
     `;
     this._$container = this._root.querySelector("#container");
     this._$text = this._root.querySelector('#text'); //store important elements for later use..prefixing DOM elements with $
-  //  this._render();
+    //  this._render();
   }
 
   _render() {
- //   this._$text.innerText = '... is awesome  dfasdf asd!'; // selectively update only parts of the template which need to change
+    this._$text.innerText = '... is awesome !'; // selectively update only parts of the template which need to change
   }
 
   // observe attribute changes
@@ -104,7 +66,7 @@ class MeDrawer extends HTMLElement {
   }
 
   disconnectedCallback() {
-   // do stuff
+    // do stuff
   }
 
 
