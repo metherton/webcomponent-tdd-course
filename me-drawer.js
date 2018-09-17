@@ -27,10 +27,16 @@ class MeDrawer extends HTMLElement {
         }
       </style>
       <div id="container">
-        <p id="text">ME Drawer...</p>    
-       </div>
-      
-    `;
+        <p id="text"></p>
+        <section>$&nbsp;printenv</section>
+        <ul class="info">
+          <li>name=Martin&nbsp;Etherton</li>
+          <li>birth=March&nbsp;4th,&nbsp;1963</li>
+          <li>address=Marknesse,&nbsp;Netherlands</li>
+          <li>hobbies=football,&nbsp;cycling,&nbsp;skiing</li>
+        </ul>
+        <section>$</section>  
+       </div>`;
     this._$container = this._root.querySelector("#container");
     this._$text = this._root.querySelector('#text'); //store important elements for later use..prefixing DOM elements with $
     //  this._render();
