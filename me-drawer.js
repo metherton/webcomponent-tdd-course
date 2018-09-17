@@ -12,13 +12,14 @@ class MeDrawer extends HTMLElement {
     this._root.innerHTML = `
       <style>
         html, body, div {
-          background-color: grey;
+          
           height: 100%;
         }
       
         #container {
           position: fixed;
           left: -600px;
+          max-width: 600px;
           transition: transform 0.5s ease-in;
         }
         
@@ -43,7 +44,7 @@ class MeDrawer extends HTMLElement {
   }
 
   _render() {
-    this._$text.innerText = '... is awesome !'; // selectively update only parts of the template which need to change
+    this._$text.innerText = ''; // selectively update only parts of the template which need to change
   }
 
   // observe attribute changes
