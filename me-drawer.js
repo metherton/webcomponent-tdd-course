@@ -89,6 +89,14 @@ class MeDrawer extends HTMLElement {
     this._$container = this._root.querySelector("#container");
     this._$text = this._root.querySelector('#text'); //store important elements for later use..prefixing DOM elements with $
     //  this._render();
+    this.addEventListener("click", (event) => {
+      switch (event.target.id) {
+        case "collapse":
+          const event = new CustomEvent("close-drawer", {});
+          this.dispatchEvent(event);
+          break;
+      }
+    });
   }
 
   _render() {

@@ -139,17 +139,21 @@
     $drawer.open = false;
   $container.classList.remove("open");
   });
+  document.addEventListener("close-drawer", (event) => {
+    $drawer.open = false;
+    $container.classList.remove("open");
+  });
   document.addEventListener("click", (event) => {
     switch (event.target.id) {
   case "expand":
     $drawer.open = true;
     $container.classList.add("open");
     break;
-  case "collapse":
-    $drawer.open = false;
-    $container.classList.remove("open");
-    break;
-  }
+//  case "collapse":
+//    $drawer.open = false;
+//    $container.classList.remove("open");
+//    break;
+//  }
   });
 </script>
 
