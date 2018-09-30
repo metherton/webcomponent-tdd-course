@@ -1,3 +1,4 @@
+
 class MeNetwork extends HTMLElement {
 
   constructor() {
@@ -29,10 +30,17 @@ class MeNetwork extends HTMLElement {
         #packet-generator {
           width: 10%;
           background: lightgrey;
+          padding: 1em 0 1em 0;
         }
         #packet-consumer {
           width: 10%;
           background: lightgrey;
+          padding: 1em 0 1em 0;
+          z-index: 30;
+        }
+        #packet-path {
+          width: 80%;
+          background-color: red;
         }
         #button-container {
           width: 100%;
@@ -49,17 +57,23 @@ class MeNetwork extends HTMLElement {
           width: 5%;
         }
       </style>
+      <script src="network-simulation.js"></script>
         
       <div id="container">
         <div id="button-container">
-          <button id="start-simulation" type="button">Start Network Simulation</button>        
+          <button id="start-simulation" type="button">Start Network Simulation</button>     
+             <button id="move" type="button">Move</button>  
         </div>
         <div id="network">
           <div id="network-path">
             <div id="packet-generator">Packet generator</div>
+            <div id="packet-path">
+              <!--<me-packet></me-packet>-->
+            </div>
             <div id="packet-consumer">Packet consumer</div>
           </div>
         </div>
+        
         <div id="buffer">
           <div>1</div>
           <div>2</div>
@@ -69,9 +83,21 @@ class MeNetwork extends HTMLElement {
         </div>
       </div>
     `;
-    this._$startSimultionButton = document.querySelector('#start-simulation');
-    this._$startSimultionButton.addEventListener('click', (event) => {
-
+    this._$startSimulationButton = this._root.querySelector('#start-simulation');
+    this._$startSimulationButton.addEventListener('click', (event) => {
+      packageProcessor().start();
+      const packet = document.createElement('me-packet');
+      this._root.getElementById('packet-path').appendChild(packet);
+      // setTimeout(() => {
+      //   packet.classList.add('move');
+      // }, 1000);
+   //   packet.classList.add('move');
+    //  this._render();
+    });
+    this._$move = this._root.querySelector('#move');
+    this._$move.addEventListener('click', (event) => {
+      const packet = this._root.querySelector('me-packet');
+      packet.setAttribute('move', true);
     });
     //this._$text = this._root.querySelector('#text'); //store important elements for later use..prefixing DOM elements with $
   //  this._render();
