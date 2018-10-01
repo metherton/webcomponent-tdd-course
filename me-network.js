@@ -18,11 +18,14 @@ class MeNetwork extends HTMLElement {
         }
         #start-simulation {
           width: 100%;
+          font-size: 2em;
           padding: 1em;
+        }
+        #start-simulation:hover {
+          cursor: pointer;
         }
         #network-path {
           width: 100%;
-          background: ghostwhite;
           display: flex;
           flex-direction: row;
           justify-content: space-between;
@@ -31,16 +34,22 @@ class MeNetwork extends HTMLElement {
           width: 10%;
           background: lightgrey;
           padding: 1em 0 1em 0;
+          z-index: 30;
+          text-align: center;
         }
-        #packet-consumer {
+        #packet-consumer {  
           width: 10%;
           background: lightgrey;
           padding: 1em 0 1em 0;
           z-index: 30;
+          text-align: center;
+        }
+        #packet-path-container {
+          width: 100%;
+          position: absolute;
         }
         #packet-path {
           width: 80%;
-          background-color: red;
         }
         #button-container {
           width: 100%;
@@ -56,19 +65,23 @@ class MeNetwork extends HTMLElement {
         #buffer div {
           width: 5%;
         }
+        #network {
+          margin-top: 1em;
+        }
       </style>
       <script src="network-simulation.js"></script>
         
       <div id="container">
         <div id="button-container">
           <button id="start-simulation" type="button">Start Network Simulation</button>     
-             <button id="move" type="button">Move</button>  
         </div>
         <div id="network">
           <div id="network-path">
             <div id="packet-generator">Packet generator</div>
-            <div id="packet-path">
-              <!--<me-packet></me-packet>-->
+            <div id="packet-path-container">
+              <div id="packet-path">
+                <!--<me-packet></me-packet>-->
+              </div>      
             </div>
             <div id="packet-consumer">Packet consumer</div>
           </div>
@@ -85,20 +98,32 @@ class MeNetwork extends HTMLElement {
     `;
     this._$startSimulationButton = this._root.querySelector('#start-simulation');
     this._$startSimulationButton.addEventListener('click', (event) => {
-      packageProcessor().start();
-      const packet = document.createElement('me-packet');
-      this._root.getElementById('packet-path').appendChild(packet);
-      // setTimeout(() => {
-      //   packet.classList.add('move');
-      // }, 1000);
+      const packets = packageProcessor().start();
+      for (let i = 0; i < packets.length; i += 1) {
+        console.log('packet: startTime: ' + packets[i].startTime() + ' processTime: ' + packets[i].processTime() + ' scheduledTime: ' + packets[i].scheduledTime() + ' dropped: ' + packets[i].dropped() + ' bufferId: ' + packets[i].bufferId() );
+        const packet = document.createElement('me-packet');
+        packet.setAttribute('id', 'packet' + i);
+        packet.data = {
+          id: i,
+          startTime: packets[i].startTime(),
+          processTime: packets[i].processTime(),
+          scheduledTime: packets[i].scheduledTime(),
+          bufferId: packets[i].bufferId(),
+          dropped: packets[i].dropped(),
+        };
+        this._root.getElementById('packet-path').appendChild(packet);
+        setTimeout(() => {
+          packet.setAttribute('move', true);
+        }, packets[i].scheduledTime() * 1000);
+      }
    //   packet.classList.add('move');
     //  this._render();
     });
-    this._$move = this._root.querySelector('#move');
-    this._$move.addEventListener('click', (event) => {
-      const packet = this._root.querySelector('me-packet');
-      packet.setAttribute('move', true);
-    });
+    // this._$move = this._root.querySelector('#move');
+    // this._$move.addEventListener('click', (event) => {
+    //   const packet = this._root.querySelector('me-packet');
+    //   packet.setAttribute('move', true);
+    // });
     //this._$text = this._root.querySelector('#text'); //store important elements for later use..prefixing DOM elements with $
   //  this._render();
   }

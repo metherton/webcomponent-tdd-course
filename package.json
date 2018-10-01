@@ -1,19 +1,11 @@
 {
-  "name": "webcomponenttdd",
+  "name": "network-packet-simulation",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "directories": {
-    "test": "test"
-  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Martin",
-  "license": "MIT",
-  "devDependencies": {
-    "babel-eslint": "9.0.0",
-    "document-register-element": "1.11.0",
-    "eslint": "5.4.0"
-  }
+  "license": "MIT"
 }
