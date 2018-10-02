@@ -131,29 +131,26 @@
   <section class="ls">$</section>
 </div>
 
-
 <script>
-  const $drawer = document.getElementById("drawer");
-  const $container = document.getElementById("container");
-  $drawer.addEventListener("click", (event) => {
+  const $drawer = document.getElementById('drawer');
+  const $container = document.getElementById('container');
+  $drawer.addEventListener('click', (event) => {
     $drawer.open = false;
-  $container.classList.remove("open");
+    $container.classList.remove('open');
   });
-  document.addEventListener("close-drawer", (event) => {
-    $drawer.open = false;
-    $container.classList.remove("open");
+  document.addEventListener('close-drawer', (event) => { 
+    $drawer.open = false; 
+    $container.classList.remove('open'); 
   });
-  document.addEventListener("click", (event) => {
-    switch (event.target.id) {
-  case "expand":
-    $drawer.open = true;
-    $container.classList.add("open");
-    break;
-//  case "collapse":
-//    $drawer.open = false;
-//    $container.classList.remove("open");
-//    break;
-//  }
+  document.addEventListener('click', (event) => {
+    switch(event.target.id) {
+      case 'expand':
+        $drawer.open = true;
+        $container.classList.add('open');
+        break;
+      default:
+        break;
+    }
   });
 </script>
 
